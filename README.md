@@ -1,79 +1,98 @@
-# Learning NestJS — Course Notes & Progress Tracker
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
 
-This is our master syllabus for learning [NestJS](https://docs.nestjs.com) from scratch, built while creating one real project together: a **Task Manager API**.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-We work **one topic at a time**. Each topic gets checked off here once we've covered the theory *and* you've practiced it in the project. As we go, we may add short notes under each item to remind future-us what we learned or decided.
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## How we work
+## Description
 
-- I explain each concept in plain language, grounded in the official docs.
-- I show a small example.
-- You practice by writing the code yourself in the project — I don't write it for you.
-- We recap, then move to the next topic.
-- Nothing is installed globally — we use `npx @nestjs/cli` so tools stay local to this project.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## The Project
+## Project setup
 
-A **Task Manager API**: a backend service to create, list, update, delete, and organize tasks. Simple enough to stay clear, rich enough to justify every concept (auth guards for "only see your own tasks", validation pipes for task input, etc.).
+```bash
+$ npm install
+```
 
----
+## Compile and run the project
 
-## Curriculum
+```bash
+# development
+$ npm run start
 
-### 0. Before We Start
-- [ ] What is NestJS, and why use it over plain Express/Node
-- [ ] Prerequisites check (Node.js, npm, editor)
-- [ ] Creating the project with the Nest CLI (`npx @nestjs/cli new`)
-- [ ] Tour of the generated project structure
+# watch mode
+$ npm run start:dev
 
-### 1. Overview (Core Building Blocks)
-- [ ] **Controllers** — receiving and routing incoming HTTP requests
-- [ ] **Providers & Services** — where business logic and data handling live
-- [ ] **Modules** — how features are grouped and wired together
-- [ ] **Middleware** — code that runs before a request reaches your route handler
-- [ ] **Exception Filters** — catching errors and shaping error responses
-- [ ] **Pipes** — validating and transforming incoming data (e.g., request bodies)
-- [ ] **Guards** — controlling access (authentication/authorization)
-- [ ] **Interceptors** — wrapping extra behavior around a request/response (logging, transforming responses, caching)
-- [ ] **Custom Decorators** — building your own reusable `@SomeDecorator()` annotations
+# production mode
+$ npm run start:prod
+```
 
-### 2. Fundamentals (Deeper Mechanics)
-- [ ] Custom Providers — more control over how dependencies are created
-- [ ] Asynchronous Providers — providers that need async setup (e.g., a DB connection)
-- [ ] Dynamic Modules — modules that can be configured when imported
-- [ ] Injection Scopes — controlling the lifetime of a provider instance
-- [ ] Circular Dependencies — what they are and how to resolve them
-- [ ] Module Reference / Lazy-loading Modules
-- [ ] Execution Context — inspecting the current request across guards/interceptors/filters
-- [ ] Lifecycle Events — hooking into app startup/shutdown
-- [ ] Testing — unit and end-to-end (e2e) testing a NestJS app
+## Run tests
 
-### 3. Techniques (Practical, Everyday Tools)
-- [ ] Configuration — managing environment variables safely (`@nestjs/config`)
-- [ ] Database Integration — connecting to a real database (TypeORM or Prisma)
-- [ ] Validation — using DTOs (Data Transfer Objects) + `class-validator`
-- [ ] Serialization — controlling exactly what data gets sent back to the client
-- [ ] Versioning — versioning your API endpoints
-- [ ] Task Scheduling — running code on a schedule (cron-like jobs)
-- [ ] Logging — built-in and custom loggers
-- [ ] File Upload — handling uploaded files
-- [ ] HTTP Module — making outgoing HTTP requests from your app
+```bash
+# unit tests
+$ npm run test
 
-### 4. Security
-- [ ] Authentication — verifying who a user is (e.g., login, JWT tokens)
-- [ ] Authorization — verifying what a user is allowed to do
-- [ ] Encryption & Hashing — protecting sensitive data like passwords
-- [ ] Helmet, CORS, Rate Limiting — common production security hardening
+# e2e tests
+$ npm run test:e2e
 
-### 5. Wrap-up / Where To Go Next
-- [ ] OpenAPI (Swagger) — auto-generating API documentation
-- [ ] Deployment basics
-- [ ] Optional deep dives: GraphQL, WebSockets, Microservices (only if you want to continue past REST)
+# test coverage
+$ npm run test:cov
+```
 
----
+## Deployment
 
-## Progress Log
+When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-*(We'll jot dated notes here as we complete sections, e.g. quirks we hit, decisions we made.)*
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
 
-- 2026-07-26 — Course plan agreed. Starting from Section 0.
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
+
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
